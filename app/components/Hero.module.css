@@ -109,7 +109,7 @@
   font-size: 0.9rem;
 }
 
-/* Background Elements */
+
 .backgroundElements {
   position: absolute;
   top: 0;
@@ -153,7 +153,7 @@
   animation-delay: -4s;
 }
 
-/* Animations */
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
@@ -216,7 +216,7 @@
   }
 }
 
-/* Animation Classes */
+
 .fadeInLeft {
   animation: fadeInLeft 0.8s ease-out forwards;
 }
@@ -233,7 +233,7 @@
   animation: slideInUp 0.6s ease-out forwards;
 }
 
-/* Delays */
+
 .delayShort {
   animation-delay: 0.2s;
 }
@@ -246,7 +246,7 @@
   animation-delay: 0.6s;
 }
 
-/* Button Effects */
+
 .primaryBtn {
   position: relative;
   overflow: hidden;
@@ -285,7 +285,7 @@
   background: rgba(139, 92, 246, 0.05);
 }
 
-/* Stat Hover Effects */
+
 .statHover:hover {
   transform: translateY(-5px);
   background: linear-gradient(135deg, #8B5CF6, #7C3AED);

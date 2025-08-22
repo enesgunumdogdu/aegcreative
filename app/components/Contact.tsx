@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import styles from './Contact.module.css'
 
-interface FormData {
+interface ContactFormData {
   name: string
   email: string
   phone: string
@@ -13,7 +13,7 @@ interface FormData {
 }
 
 export default function Contact() {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     phone: '',
@@ -36,13 +36,11 @@ export default function Contact() {
   }
 
   const __validateForm = (): boolean => {
-    // Honeypot check - bots often fill hidden fields
     if (formData.honeypot.trim() !== '') {
       console.log('Bot detected: honeypot filled')
       return false
     }
 
-    // Time-based check - too fast submission (less than 3 seconds)
     const currentTime = Date.now()
     const timeDiff = currentTime - formStartTime
     if (timeDiff < 3000) {
@@ -50,12 +48,10 @@ export default function Contact() {
       return false
     }
 
-    // Basic field validation
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       return false
     }
 
-    // Email format check
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(formData.email)) {
       return false
@@ -67,9 +63,7 @@ export default function Contact() {
   const __handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Anti-bot validation
     if (!__validateForm()) {
-      // Silently reject bot submissions
       return
     }
     
@@ -150,7 +144,6 @@ export default function Contact() {
           </div>
 
           <form onSubmit={__handleSubmit} className={styles.contactForm}>
-            {/* Honeypot field - hidden from users */}
             <input
               type="text"
               name="honeypot"
