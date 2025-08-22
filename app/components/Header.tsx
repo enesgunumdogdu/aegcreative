@@ -23,15 +23,15 @@ export default function Header() {
       <div className="container">
         <div className={styles.nav}>
           <div className={styles.logo}>
-            <h1>AegCreative</h1>
+            <h1>3nes</h1>
           </div>
           
           <nav className={`${styles.navigation} ${isMenuOpen ? styles.active : ''}`}>
-            <button onClick={() => __scrollToSection('services')}>Hizmetler</button>
-            <button onClick={() => __scrollToSection('about')}>Hakkımızda</button>
-            <button onClick={() => __scrollToSection('contact')}>İletişim</button>
+            <button onClick={() => __scrollToSection('services')}>Services</button>
+            <button onClick={() => __scrollToSection('about')}>About</button>
+            <button onClick={() => __scrollToSection('contact')}>Contact</button>
             <button onClick={() => __scrollToSection('contact')} className="btn">
-              Proje Başlat
+              Start Project
             </button>
           </nav>
 

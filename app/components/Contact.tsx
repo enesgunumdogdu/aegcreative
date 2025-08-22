@@ -7,9 +7,7 @@ interface FormData {
   name: string
   email: string
   phone: string
-  company: string
   projectType: string
-  budget: string
   message: string
 }
 
@@ -18,9 +16,7 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
-    company: '',
     projectType: '',
-    budget: '',
     message: ''
   })
 
@@ -37,15 +33,13 @@ export default function Contact() {
   const __handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
-    const mailtoLink = `mailto:hello@aegcreative.com?subject=Proje Talebi - ${formData.projectType}&body=
-      İsim: ${formData.name}
+    const mailtoLink = `mailto:me@enesgunumdogdu.com.tr?subject=Project Request - ${formData.projectType}&body=
+      Name: ${formData.name}
       Email: ${formData.email}
-      Telefon: ${formData.phone}
-      Şirket: ${formData.company}
-      Proje Türü: ${formData.projectType}
-      Bütçe: ${formData.budget}
+      Phone: ${formData.phone}
+      Project Type: ${formData.projectType}
       
-      Mesaj:
+      Message:
       ${formData.message}
     `
     
@@ -57,26 +51,14 @@ export default function Contact() {
     {
       icon: '📧',
       label: 'Email',
-      value: 'hello@aegcreative.com',
-      link: 'mailto:hello@aegcreative.com'
-    },
-    {
-      icon: '📞',
-      label: 'Telefon',
-      value: '+90 (212) 123 45 67',
-      link: 'tel:+902121234567'
+      value: 'me@enesgunumdogdu.com.tr',
+      link: 'mailto:me@enesgunumdogdu.com.tr'
     },
     {
       icon: '📍',
-      label: 'Adres',
-      value: 'Maslak, Istanbul, Turkey',
+      label: 'Address',
+      value: 'Antalya, Turkey',
       link: null
-    },
-    {
-      icon: '💬',
-      label: 'WhatsApp',
-      value: 'Hızlı İletişim',
-      link: 'https://wa.me/902121234567'
     }
   ]
 
@@ -86,13 +68,13 @@ export default function Contact() {
         <div className="container">
           <div className={styles.successMessage}>
             <div className={styles.successIcon}>✅</div>
-            <h3>Teşekkürler!</h3>
-            <p>Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.</p>
+            <h3>Thank you!</h3>
+            <p>Your message has been sent successfully. We will get back to you as soon as possible.</p>
             <button 
               onClick={() => setIsSubmitted(false)} 
               className="btn"
             >
-              Yeni Mesaj Gönder
+              Send New Message
             </button>
           </div>
         </div>
@@ -103,9 +85,9 @@ export default function Contact() {
   return (
     <section id="contact" className="section">
       <div className="container">
-        <h2 className="section-title">İletişime Geçin</h2>
+        <h2 className="section-title">Get In Touch</h2>
         <p className="section-subtitle">
-          Projeniz hakkında konuşalım. Sizin için özel çözümler geliştirmek için buradayız.
+          Let's talk about your project. We're here to develop custom solutions for you.
         </p>
 
         <div className={styles.contactContent}>
@@ -130,7 +112,7 @@ export default function Contact() {
           <form onSubmit={__handleSubmit} className={styles.contactForm}>
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
-                <label htmlFor="name">İsim Soyisim *</label>
+                <label htmlFor="name">Full Name *</label>
                 <input
                   type="text"
                   id="name"
@@ -155,30 +137,18 @@ export default function Contact() {
 
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
-                <label htmlFor="phone">Telefon</label>
+                <label htmlFor="phone">Phone *</label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={__handleInputChange}
+                  required
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="company">Şirket</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={__handleInputChange}
-                />
-              </div>
-            </div>
-
-            <div className={styles.formRow}>
-              <div className={styles.formGroup}>
-                <label htmlFor="projectType">Proje Türü *</label>
+                <label htmlFor="projectType">Project Type *</label>
                 <select
                   id="projectType"
                   name="projectType"
@@ -186,48 +156,34 @@ export default function Contact() {
                   onChange={__handleInputChange}
                   required
                 >
-                  <option value="">Seçin...</option>
-                  <option value="Web Uygulaması">Web Uygulaması</option>
-                  <option value="Mobil Uygulama">Mobil Uygulama</option>
-                  <option value="AI Çözümü">AI Çözümü</option>
-                  <option value="E-ticaret">E-ticaret</option>
+                  <option value="">Select...</option>
+                  <option value="Web Application">Web Application</option>
+                  <option value="Mobile Application">Mobile Application</option>
+                  <option value="AI Solution">AI Solution</option>
+                  <option value="E-commerce">E-commerce</option>
                   <option value="Cloud & DevOps">Cloud & DevOps</option>
-                  <option value="Danışmanlık">Danışmanlık</option>
-                  <option value="Diğer">Diğer</option>
+                  <option value="Consulting">Consulting</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="budget">Bütçe</label>
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={__handleInputChange}
-                >
-                  <option value="">Seçin...</option>
-                  <option value="10K-25K TL">10K-25K TL</option>
-                  <option value="25K-50K TL">25K-50K TL</option>
-                  <option value="50K-100K TL">50K-100K TL</option>
-                  <option value="100K+ TL">100K+ TL</option>
-                </select>
-              </div>
+
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="message">Proje Detayları *</label>
+              <label htmlFor="message">Project Details *</label>
               <textarea
                 id="message"
                 name="message"
                 rows={5}
                 value={formData.message}
                 onChange={__handleInputChange}
-                placeholder="Projeniz hakkında detaylı bilgi verin..."
+                placeholder="Please provide detailed information about your project..."
                 required
               />
             </div>
 
             <button type="submit" className={`btn ${styles.submitBtn}`}>
-              Proje Talebini Gönder
+              Send Project Request
             </button>
           </form>
         </div>
@@ -235,3 +191,4 @@ export default function Contact() {
     </section>
   )
 }
+

@@ -17,38 +17,38 @@ export default function Services() {
   }
   const services: Service[] = [
     {
-      title: 'AI Çözümleri',
-      description: 'Makine Öğrenmesi, Derin Öğrenme ve AI tabanlı uygulamalar geliştiriyoruz. Verilerinizi değerli içgörülere dönüştürün.',
+      title: 'AI Solutions',
+      description: 'We develop Machine Learning, Deep Learning, and AI-based applications. Transform your data into valuable insights.',
       features: ['Machine Learning', 'Natural Language Processing', 'Computer Vision', 'Predictive Analytics'],
       icon: '🤖'
     },
     {
-      title: 'Web Uygulamaları',
-      description: 'Modern, hızlı ve kullanıcı dostu web uygulamaları. React, Next.js ve en son teknolojilerle geliştiriyoruz.',
+      title: 'Web Applications',
+      description: 'Modern, fast, and user-friendly web applications. We develop with React, Next.js, and the latest technologies.',
       features: ['React/Next.js', 'TypeScript', 'Responsive Design', 'PWA Support'],
       icon: '💻'
     },
     {
-      title: 'Mobil Uygulamalar',
-      description: 'iOS ve Android platformları için native ve cross-platform mobil uygulamalar geliştiriyoruz.',
+      title: 'Mobile Applications',
+      description: 'We develop native and cross-platform mobile applications for iOS and Android platforms.',
       features: ['React Native', 'Flutter', 'Native iOS/Android', 'UI/UX Design'],
       icon: '📱'
     },
     {
       title: 'Cloud & DevOps',
-      description: 'Cloud altyapı kurulumu, otomasyon ve sürekli entegrasyon çözümleri sunuyoruz.',
+      description: 'We provide cloud infrastructure setup, automation, and continuous integration solutions.',
       features: ['AWS/Azure/GCP', 'Docker/Kubernetes', 'CI/CD Pipeline', 'Monitoring'],
       icon: '☁️'
     },
     {
-      title: 'E-ticaret Çözümleri',
-      description: 'Kapsamlı e-ticaret platformları ve ödeme sistemi entegrasyonları geliştiriyoruz.',
+      title: 'E-commerce Solutions',
+      description: 'We develop comprehensive e-commerce platforms and payment system integrations.',
       features: ['Shopify/WooCommerce', 'Payment Integrations', 'Inventory Management', 'Analytics Dashboard'],
       icon: '🛒'
     },
     {
-      title: 'Danışmanlık & Analiz',
-      description: 'Dijital dönüşüm danışmanlığı ve teknoloji stratejisi geliştirme hizmetleri sunuyoruz.',
+      title: 'Consulting & Analysis',
+      description: 'We provide digital transformation consulting and technology strategy development services.',
       features: ['Digital Strategy', 'Technology Consulting', 'Code Review', 'Performance Optimization'],
       icon: '📊'
     }
@@ -57,9 +57,9 @@ export default function Services() {
   return (
     <section id="services" className="section">
       <div className="container">
-        <h2 className="section-title">Hizmetlerimiz</h2>
+        <h2 className="section-title">Our Services</h2>
         <p className="section-subtitle">
-          AI destekli modern teknolojilerle iş ihtiyaçlarınıza özel çözümler geliştiriyoruz.
+          We develop custom solutions for your business needs with AI-powered modern technologies.
         </p>
         
         <div className={styles.servicesGrid}>
@@ -78,8 +78,8 @@ export default function Services() {
         </div>
         
         <div className={styles.customProject}>
-          <p>Aradığınız hizmeti bulamadınız mı? Sizin için özel çözümler de geliştiriyoruz.</p>
-          <button onClick={__scrollToContact} className="btn">Özel Proje Talebi</button>
+          <p>Can't find the service you're looking for? We also develop custom solutions for you.</p>
+          <button onClick={__scrollToContact} className="btn">Custom Project Request</button>
         </div>
       </div>
     </section>

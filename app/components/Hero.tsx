@@ -15,45 +15,45 @@ export default function Hero() {
         <div className={styles.content}>
           <div className={styles.textContent}>
             <h1 className={styles.title}>
-              <span className={styles.brand}>Aeg Creative</span>
-              <span className={styles.subtitle}>Dijital Dönüşüm için</span>
+              <span className={styles.brand}>3nes</span>
+              <span className={styles.subtitle}>for Digital Transformation</span>
             </h1>
             <p className={styles.description}>
-              AegCreative'de, yapay zeka teknolojileri ve modern yazılım çözümleri ile 
-              işinizi dijital çağın zirvesine taşıyoruz.
+              At 3nes, we elevate your business to the pinnacle of the digital era with 
+              artificial intelligence technologies and modern software solutions.
             </p>
             <div className={styles.actions}>
               <button 
                 onClick={() => __scrollToSection('contact')} 
                 className="btn"
               >
-                Proje Başlat
+                Start Project
               </button>
               <button 
                 onClick={() => __scrollToSection('services')} 
                 className="btn btn-outline"
               >
-                Hizmetleri Görüntüle
+                View Services
               </button>
             </div>
           </div>
           
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <span className={styles.number}>50+</span>
-              <span className={styles.label}>Tamamlanan Proje</span>
+              <span className={styles.number}>30+</span>
+              <span className={styles.label}>Completed Projects</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.number}>25+</span>
-              <span className={styles.label}>Mutlu Müşteri</span>
+              <span className={styles.number}>30+</span>
+              <span className={styles.label}>Happy Clients</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.number}>5+</span>
-              <span className={styles.label}>Yıl Deneyim</span>
+              <span className={styles.number}>4+</span>
+              <span className={styles.label}>Years Experience</span>
             </div>
             <div className={styles.stat}>
               <span className={styles.number}>100%</span>
-              <span className={styles.label}>Müşteri Memnuniyeti</span>
+              <span className={styles.label}>Client Satisfaction</span>
             </div>
           </div>
         </div>

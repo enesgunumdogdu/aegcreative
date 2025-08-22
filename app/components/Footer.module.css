@@ -6,7 +6,7 @@
 
 .footerContent {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 3rem;
 }
@@ -52,39 +52,7 @@
   color: #d1d5db;
 }
 
-.newsletterSection h4 {
-  color: white;
-}
 
-.newsletterForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.newsletterForm input {
-  padding: 0.75rem;
-  border: 2px solid #374151;
-  border-radius: 8px;
-  background: #374151;
-  color: white;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.newsletterForm input:focus {
-  outline: none;
-  border-color: #8B5CF6;
-  background: #4b5563;
-}
-
-.newsletterForm input::placeholder {
-  color: #9ca3af;
-}
-
-.newsletterForm .btn {
-  align-self: flex-start;
-}
 
 .footerBottom {
   padding-top: 2rem;

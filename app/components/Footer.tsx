@@ -9,86 +9,62 @@ export default function Footer() {
     element.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const __handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const formData = new FormData(e.currentTarget)
-    const email = formData.get('email') as string
-    
-    if (!email) return
-    
-    const mailtoLink = `mailto:hello@aegcreative.com?subject=Newsletter Aboneliği&body=Email: ${email}`
-    window.location.href = mailtoLink
-  }
+
 
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.footerContent}>
           <div className={styles.footerSection}>
-            <h3 className={styles.logo}>AegCreative</h3>
+            <h3 className={styles.logo}>3nes</h3>
             <p className={styles.description}>
-              AI destekli yazılım çözümleri sunan dijital ajans. 
-              Geleceğin teknolojilerini bugün hayata geçiriyoruz.
+              Digital agency providing AI-powered software solutions. 
+              Bringing the technologies of the future to life today.
             </p>
           </div>
 
           <div className={styles.footerSection}>
-            <h4>Şirket</h4>
+            <h4>Company</h4>
             <ul>
               <li>
                 <button onClick={() => __scrollToSection('about')}>
-                  Hakkımızda
+                  About
                 </button>
               </li>
               <li>
                 <button onClick={() => __scrollToSection('services')}>
-                  Hizmetler
+                  Services
                 </button>
               </li>
               <li>
                 <button onClick={() => __scrollToSection('contact')}>
-                  İletişim
+                  Contact
                 </button>
               </li>
             </ul>
           </div>
 
           <div className={styles.footerSection}>
-            <h4>Hizmetler</h4>
+            <h4>Services</h4>
             <ul>
-              <li>AI Çözümleri</li>
-              <li>Web Geliştirme</li>
-              <li>Mobil Uygulamalar</li>
+              <li>AI Solutions</li>
+              <li>Web Development</li>
+              <li>Mobile Apps</li>
             </ul>
           </div>
 
           <div className={styles.footerSection}>
-            <h4>Hukuki</h4>
+            <h4>Legal</h4>
             <ul>
-              <li>Destek</li>
-              <li>SSS</li>
-              <li>Gizlilik Politikası</li>
+              <li>Support</li>
+              <li>FAQ</li>
+              <li>Privacy Policy</li>
             </ul>
-          </div>
-
-          <div className={styles.newsletterSection}>
-            <h4>Bültenimize Abone Olun</h4>
-            <form onSubmit={__handleNewsletterSubmit} className={styles.newsletterForm}>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email adresiniz"
-                required
-              />
-              <button type="submit" className="btn">
-                Abone Ol
-              </button>
-            </form>
           </div>
         </div>
 
         <div className={styles.footerBottom}>
-          <p>&copy; 2025 AegCreative. Tüm hakları saklıdır.</p>
+          <p>&copy; 2025 3nes. All rights reserved.</p>
         </div>
       </div>
     </footer>
