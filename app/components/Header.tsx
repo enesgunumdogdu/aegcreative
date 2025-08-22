@@ -23,7 +23,7 @@ export default function Header() {
       <div className="container">
         <div className={styles.nav}>
           <div className={styles.logo}>
-            <h1>3nes</h1>
+            <h1 className="logo-font">3nes</h1>
           </div>
           
           <nav className={`${styles.navigation} ${isMenuOpen ? styles.active : ''}`}>

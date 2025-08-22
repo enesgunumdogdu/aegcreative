@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="container">
         <div className={styles.footerContent}>
           <div className={styles.footerSection}>
-            <h3 className={styles.logo}>3nes</h3>
+            <h3 className={`${styles.logo} logo-font`}>3nes</h3>
             <p className={styles.description}>
               Digital agency providing AI-powered software solutions. 
               Bringing the technologies of the future to life today.
@@ -53,18 +53,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className={styles.footerSection}>
-            <h4>Legal</h4>
-            <ul>
-              <li>Support</li>
-              <li>FAQ</li>
-              <li>Privacy Policy</li>
-            </ul>
-          </div>
         </div>
 
         <div className={styles.footerBottom}>
           <p>&copy; 2025 3nes. All rights reserved.</p>
+          <p className={styles.madeWith}>
+            Made with 💜 by{' '}
+            <a 
+              href="https://www.enesgunumdogdu.com.tr" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Enes Günümdoğdu
+            </a>
+          </p>
         </div>
       </div>
     </footer>

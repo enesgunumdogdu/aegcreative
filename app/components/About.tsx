@@ -33,7 +33,7 @@ export default function About() {
         <h2 className="section-title">About Us</h2>
         
         <div className={styles.aboutContent}>
-          <div className={styles.textContent}>
+          <div className={styles.leftContent}>
             <p className={styles.description}>
               As 3nes, we are a digital agency specialized in artificial intelligence and modern software 
               technologies since 2020.
@@ -47,33 +47,35 @@ export default function About() {
               By prioritizing quality, innovation, and customer satisfaction in every project, 
               we bring the technologies of the future to life today.
             </p>
+            
+            <div className={styles.statsGrid}>
+              {stats.map((stat, index) => (
+                <div key={index} className={styles.statCard}>
+                  <span className={styles.statNumber}>{stat.year || stat.number}</span>
+                  <span className={styles.statLabel}>{stat.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
           
-          <div className={styles.statsGrid}>
-            {stats.map((stat, index) => (
-              <div key={index} className={styles.statCard}>
-                <span className={styles.statNumber}>{stat.year || stat.number}</span>
-                <span className={styles.statLabel}>{stat.label}</span>
+          <div className={styles.rightContent}>
+            <div className={styles.visionCard}>
+              <h3 className={styles.visionTitle}>Our Vision</h3>
+              <p className={styles.visionText}>
+                As Turkey's most innovative technology company, we create social and economic value with 
+                artificial intelligence and digital solutions. Leading sustainable technology projects 
+                that can compete on a global scale.
+              </p>
+            </div>
+
+            <div className={styles.techCard}>
+              <h3 className={styles.techTitle}>Our Tech Stack</h3>
+              <div className={styles.techGrid}>
+                {technologies.map((tech, index) => (
+                  <span key={index} className={styles.techBadge}>{tech}</span>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className={styles.visionSection}>
-          <h3 className={styles.visionTitle}>Our Vision</h3>
-          <p className={styles.visionText}>
-            As Turkey's most innovative technology company, we create social and economic value with 
-            artificial intelligence and digital solutions. Leading sustainable technology projects 
-            that can compete on a global scale.
-          </p>
-        </div>
-
-        <div className={styles.techStack}>
-          <h3 className={styles.techTitle}>Our Tech Stack</h3>
-          <div className={styles.techGrid}>
-            {technologies.map((tech, index) => (
-              <span key={index} className={styles.techBadge}>{tech}</span>
-            ))}
+            </div>
           </div>
         </div>
 
