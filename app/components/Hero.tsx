@@ -103,7 +103,7 @@ export default function Hero() {
               <span className={styles.label}>Happy Clients</span>
             </div>
             <div className={`${styles.stat} ${styles.statHover}`}>
-              <span className={styles.number} data-count="4">0+</span>
+              <span className={styles.number} data-count="5">0+</span>
               <span className={styles.label}>Years Experience</span>
             </div>
             <div className={`${styles.stat} ${styles.statHover}`}>
