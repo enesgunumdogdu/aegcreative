@@ -18,8 +18,12 @@ export default function Contact() {
     email: '',
     phone: '',
     projectType: '',
-    message: ''
+    message: '',
+    honeypot: ''
   })
+
+  const [submitTime, setSubmitTime] = useState<number | null>(null)
+  const [formStartTime] = useState<number>(Date.now())
 
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -31,8 +35,43 @@ export default function Contact() {
     }))
   }
 
+  const __validateForm = (): boolean => {
+    // Honeypot check - bots often fill hidden fields
+    if (formData.honeypot.trim() !== '') {
+      console.log('Bot detected: honeypot filled')
+      return false
+    }
+
+    // Time-based check - too fast submission (less than 3 seconds)
+    const currentTime = Date.now()
+    const timeDiff = currentTime - formStartTime
+    if (timeDiff < 3000) {
+      console.log('Bot detected: too fast submission')
+      return false
+    }
+
+    // Basic field validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      return false
+    }
+
+    // Email format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email)) {
+      return false
+    }
+
+    return true
+  }
+
   const __handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Anti-bot validation
+    if (!__validateForm()) {
+      // Silently reject bot submissions
+      return
+    }
     
     const mailtoLink = `mailto:enesgunumdogdu0@gmail.com?subject=Project Request - ${formData.projectType}&body=
       Name: ${formData.name}
@@ -111,6 +150,17 @@ export default function Contact() {
           </div>
 
           <form onSubmit={__handleSubmit} className={styles.contactForm}>
+            {/* Honeypot field - hidden from users */}
+            <input
+              type="text"
+              name="honeypot"
+              value={formData.honeypot}
+              onChange={__handleInputChange}
+              style={{ display: 'none' }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+            
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
                 <label htmlFor="name">Full Name *</label>
