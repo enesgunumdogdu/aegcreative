@@ -9,6 +9,7 @@ interface FormData {
   phone: string
   projectType: string
   message: string
+  honeypot: string
 }
 
 export default function Contact() {
@@ -33,7 +34,7 @@ export default function Contact() {
   const __handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
-    const mailtoLink = `mailto:me@enesgunumdogdu.com.tr?subject=Project Request - ${formData.projectType}&body=
+    const mailtoLink = `mailto:enesgunumdogdu0@gmail.com?subject=Project Request - ${formData.projectType}&body=
       Name: ${formData.name}
       Email: ${formData.email}
       Phone: ${formData.phone}
