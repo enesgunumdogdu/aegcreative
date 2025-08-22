@@ -4,6 +4,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: '3nes - Modern Software Agency',
   description: 'Elevating your business to the pinnacle of the digital era with artificial intelligence technologies and modern software solutions.',
+  icons: {
+    icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💜</text></svg>',
+  },
 }
 
 export default function RootLayout({
