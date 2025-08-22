@@ -46,7 +46,8 @@ body {
 }
 
 .btn:hover {
-  background-color: #7C3AED;
+  background-color: #7C3AED !important;
+  color: white !important;
   transform: translateY(-1px);
   box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
 }

@@ -5,13 +5,14 @@ export default function About() {
     { year: '2020', label: 'Founded' },
     { number: '30+', label: 'Completed Projects' },
     { number: '30+', label: 'Happy Clients' },
-    { number: '10+', label: 'Tech Experts' }
+    { number: '4+', label: 'Tech Experts' }
   ]
 
   const technologies = [
-    'React', 'Next.js', 'Node.js', 'Python', 'TypeScript',
-    'TensorFlow', 'PyTorch', 'AWS', 'Docker', 'Kubernetes',
-    'MongoDB', 'PostgreSQL'
+    'Python', 'TypeScript', 'C#', 'Dart', 'HTML/CSS', 'SQL',
+    'ASP.NET Core', 'Entity Framework Core', 'Flutter', 'WordPress',
+    'TensorFlow', 'Keras', 'MySQL', 'SQL Server', 'MongoDB', 'Firebase',
+    'Elasticsearch', 'Apache SOLR', 'FAISS', 'Git & GitHub', 'Swagger'
   ]
 
   const values = [
