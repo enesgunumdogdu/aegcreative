@@ -9,7 +9,6 @@ A modern, responsive and user-friendly software agency website. Developed using 
 - ⚡ Fast performance with Next.js
 - 🔧 TypeScript support
 - 📧 Contact form with bot protection
-- 🎯 SEO optimization
 - 🎭 Smooth animations and hover effects
 
 ## Technologies
@@ -18,4 +17,5 @@ A modern, responsive and user-friendly software agency website. Developed using 
 - React 18
 - TypeScript
 - CSS Modules
+
 - Responsive Design
