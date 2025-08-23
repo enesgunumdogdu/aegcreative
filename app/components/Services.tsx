@@ -10,7 +10,7 @@ interface Service {
 }
 
 export default function Services() {
-  const __scrollToContact = () => {
+  const __scrollToContact = (): void => {
     const element = document.getElementById('contact')
     if (!element) return
     element.scrollIntoView({ behavior: 'smooth' })
