@@ -27,7 +27,7 @@ export default function Contact() {
 
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const __handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const __handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>): void => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
@@ -60,7 +60,7 @@ export default function Contact() {
     return true
   }
 
-  const __handleSubmit = (e: React.FormEvent) => {
+  const __handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     
     if (!__validateForm()) {
