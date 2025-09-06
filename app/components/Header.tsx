@@ -6,11 +6,11 @@ import styles from './Header.module.css'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const __toggleMenu = () => {
+  const __toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const __scrollToSection = (sectionId: string) => {
+  const __scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId)
     if (!element) return
     
@@ -18,7 +18,7 @@ export default function Header() {
     setIsMenuOpen(false)
   }
 
-  const __scrollToTop = () => {
+  const __scrollToTop = (): void => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     setIsMenuOpen(false)
   }
