@@ -29,7 +29,7 @@ export default function Contact() {
   const [result, setResult] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const __handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>): void => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>): void => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
@@ -37,7 +37,7 @@ export default function Contact() {
     }))
   }
 
-  const __validateForm = (): boolean => {
+  const validateForm = (): boolean => {
     if (formData.honeypot.trim() !== '') {
       console.log('Bot detected: honeypot filled')
       return false
@@ -62,10 +62,10 @@ export default function Contact() {
     return true
   }
 
-  const __handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
     
-    if (!__validateForm()) {
+    if (!validateForm()) {
       return
     }
     
@@ -173,12 +173,12 @@ export default function Contact() {
             ))}
           </div>
 
-          <form onSubmit={__handleSubmit} className={styles.contactForm}>
+          <form onSubmit={handleSubmit} className={styles.contactForm}>
             <input
               type="text"
               name="honeypot"
               value={formData.honeypot}
-              onChange={__handleInputChange}
+              onChange={handleInputChange}
               style={{ display: 'none' }}
               tabIndex={-1}
               autoComplete="off"
@@ -192,7 +192,7 @@ export default function Contact() {
                   id="name"
                   name="name"
                   value={formData.name}
-                  onChange={__handleInputChange}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -203,7 +203,7 @@ export default function Contact() {
                   id="email"
                   name="email"
                   value={formData.email}
-                  onChange={__handleInputChange}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -217,7 +217,7 @@ export default function Contact() {
                   id="phone"
                   name="phone"
                   value={formData.phone}
-                  onChange={__handleInputChange}
+                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -227,7 +227,7 @@ export default function Contact() {
                   id="projectType"
                   name="projectType"
                   value={formData.projectType}
-                  onChange={__handleInputChange}
+                  onChange={handleInputChange}
                   required
                 >
                   <option value="">Select...</option>
@@ -250,7 +250,7 @@ export default function Contact() {
                 name="message"
                 rows={5}
                 value={formData.message}
-                onChange={__handleInputChange}
+                onChange={handleInputChange}
                 placeholder="Please provide detailed information about your project..."
                 required
               />

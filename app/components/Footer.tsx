@@ -3,7 +3,7 @@
 import styles from './Footer.module.css'
 
 export default function Footer() {
-  const __scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (!element) return
     element.scrollIntoView({ behavior: 'smooth' })
@@ -27,17 +27,17 @@ export default function Footer() {
             <h4>Company</h4>
             <ul>
               <li>
-                <button onClick={() => __scrollToSection('about')}>
+                <button onClick={() => scrollToSection('about')}>
                   About
                 </button>
               </li>
               <li>
-                <button onClick={() => __scrollToSection('services')}>
+                <button onClick={() => scrollToSection('services')}>
                   Services
                 </button>
               </li>
               <li>
-                <button onClick={() => __scrollToSection('contact')}>
+                <button onClick={() => scrollToSection('contact')}>
                   Contact
                 </button>
               </li>

@@ -10,7 +10,7 @@ interface Service {
 }
 
 export default function Services() {
-  const __scrollToContact = (): void => {
+  const scrollToContact = (): void => {
     const element = document.getElementById('contact')
     if (!element) return
     element.scrollIntoView({ behavior: 'smooth' })
@@ -79,7 +79,7 @@ export default function Services() {
         
         <div className={styles.customProject}>
           <p>Can't find the service you're looking for? We also develop custom solutions for you.</p>
-          <button onClick={__scrollToContact} className="btn">Custom Project Request</button>
+          <button onClick={scrollToContact} className="btn">Custom Project Request</button>
         </div>
       </div>
     </section>
