@@ -62,7 +62,7 @@ export default function Contact() {
     return true
   }
 
-  const __handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const __handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
     
     if (!__validateForm()) {
