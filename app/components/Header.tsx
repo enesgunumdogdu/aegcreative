@@ -6,11 +6,11 @@ import styles from './Header.module.css'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const __toggleMenu = (): void => {
+  const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const __scrollToSection = (sectionId: string): void => {
+  const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId)
     if (!element) return
     
@@ -18,7 +18,7 @@ export default function Header() {
     setIsMenuOpen(false)
   }
 
-  const __scrollToTop = (): void => {
+  const scrollToTop = (): void => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     setIsMenuOpen(false)
   }
@@ -28,21 +28,21 @@ export default function Header() {
       <div className="container">
         <div className={styles.nav}>
           <div className={styles.logo}>
-            <h1 className="logo-font" onClick={__scrollToTop}>3nes</h1>
+            <h1 className="logo-font" onClick={scrollToTop}>3nes</h1>
           </div>
           
           <nav className={`${styles.navigation} ${isMenuOpen ? styles.active : ''}`}>
-            <button onClick={() => __scrollToSection('services')}>Services</button>
-            <button onClick={() => __scrollToSection('about')}>About</button>
-            <button onClick={() => __scrollToSection('contact')}>Contact</button>
-            <button onClick={() => __scrollToSection('contact')} className="btn">
+            <button onClick={() => scrollToSection('services')}>Services</button>
+            <button onClick={() => scrollToSection('about')}>About</button>
+            <button onClick={() => scrollToSection('contact')}>Contact</button>
+            <button onClick={() => scrollToSection('contact')} className="btn">
               Start Project
             </button>
           </nav>
 
           <button 
             className={styles.menuToggle}
-            onClick={__toggleMenu}
+            onClick={toggleMenu}
             aria-label="Menu"
           >
             <span></span>

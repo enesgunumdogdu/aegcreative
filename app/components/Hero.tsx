@@ -15,7 +15,7 @@ export default function Hero() {
       (entries) => {
         if (entries[0].isIntersecting && !countersStarted) {
           setCountersStarted(true)
-          __startCounters()
+          startCounters()
         }
       },
       { threshold: 0.5 }
@@ -28,7 +28,7 @@ export default function Hero() {
     return () => observer.disconnect()
   }, [countersStarted])
 
-  const __startCounters = (): void => {
+  const startCounters = (): void => {
     const ANIMATION_DURATION = 1500
     const FRAME_RATE = 30
     const totalFrames = ANIMATION_DURATION / FRAME_RATE
@@ -48,16 +48,16 @@ export default function Hero() {
           clearInterval(timer)
         }
         
-        element.textContent = __formatCounterValue(Math.floor(current), target)
+        element.textContent = formatCounterValue(Math.floor(current), target)
       }, FRAME_RATE)
     })
   }
 
-  const __formatCounterValue = (current: number, target: number): string => {
+  const formatCounterValue = (current: number, target: number): string => {
     return target === 100 ? `${current}%` : `${current}+`
   }
 
-  const __scrollToSection = (sectionId: string): void => {
+  const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId)
     if (!element) return
     element.scrollIntoView({ behavior: 'smooth' })
@@ -106,7 +106,7 @@ export default function Hero() {
             
             <div className={`${styles.actions} ${isLoaded ? styles.fadeInUp : ''} ${styles.delayLong}`}>
               <button 
-                onClick={() => __scrollToSection('contact')} 
+                onClick={() => scrollToSection('contact')} 
                 className={`${styles.primaryBtn}`}
               >
                 <span>Start Your Project</span>
@@ -115,7 +115,7 @@ export default function Hero() {
                 </svg>
               </button>
               <button 
-                onClick={() => __scrollToSection('services')} 
+                onClick={() => scrollToSection('services')} 
                 className={`${styles.secondaryBtn}`}
               >
                 <span>Explore Services</span>
