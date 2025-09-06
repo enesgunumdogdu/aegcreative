@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styles from './Contact.module.css'
 
 interface ContactFormData {
@@ -26,8 +26,10 @@ export default function Contact() {
   const [formStartTime] = useState<number>(Date.now())
 
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [result, setResult] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const __handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const __handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>): void => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
@@ -60,25 +62,53 @@ export default function Contact() {
     return true
   }
 
-  const __handleSubmit = (e: React.FormEvent) => {
+  const __handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
     if (!__validateForm()) {
       return
     }
     
-    const mailtoLink = `mailto:enesgunumdogdu0@gmail.com?subject=Project Request - ${formData.projectType}&body=
-      Name: ${formData.name}
-      Email: ${formData.email}
-      Phone: ${formData.phone}
-      Project Type: ${formData.projectType}
-      
-      Message:
-      ${formData.message}
-    `
+    setResult("Sending....")
+    setIsSubmitting(true)
     
-    window.location.href = mailtoLink
-    setIsSubmitted(true)
+    const web3FormData = new FormData()
+    web3FormData.append("access_key", "1a718ec8-9e39-4fef-87f1-8b4ba0789a31")
+    web3FormData.append("name", formData.name)
+    web3FormData.append("email", formData.email)
+    web3FormData.append("phone", formData.phone)
+    web3FormData.append("projectType", formData.projectType)
+    web3FormData.append("message", formData.message)
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: web3FormData
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setResult("Form Submitted Successfully")
+        setIsSubmitted(true)
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          projectType: '',
+          message: '',
+          honeypot: ''
+        })
+      } else {
+        console.log("Error", data)
+        setResult(data.message || "Something went wrong. Please try again.")
+      }
+    } catch (error) {
+      console.error("Submission error:", error)
+      setResult("Failed to submit form. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
@@ -226,9 +256,19 @@ export default function Contact() {
               />
             </div>
 
-            <button type="submit" className={`btn ${styles.submitBtn}`}>
-              Send Project Request
+            <button 
+              type="submit" 
+              className={`btn ${styles.submitBtn}`}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Sending...' : 'Send Project Request'}
             </button>
+            
+            {result && !isSubmitted && (
+              <div className={styles.formResult}>
+                <span>{result}</span>
+              </div>
+            )}
           </form>
         </div>
       </div>
