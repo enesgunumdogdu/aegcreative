@@ -193,6 +193,7 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
+                  autoComplete="name"
                   required
                 />
               </div>
@@ -204,6 +205,7 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
+                  autoComplete="email"
                   required
                 />
               </div>
@@ -218,6 +220,7 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
+                  autoComplete="tel"
                   required
                 />
               </div>
