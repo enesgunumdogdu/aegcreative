@@ -56,8 +56,12 @@ export function useTabAnimation() {
     
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        clearInterval(typewriterInterval)
         document.title = '👀 Come back! - 3nes'
+      } else {
+        charIndex = 0
+        isTyping = true
+        frameIndex = 0
+        pauseCounter = 0
       }
     }
     
